@@ -1,0 +1,49 @@
+#include "DxLib.h"
+
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+
+  ChangeWindowMode(TRUE);
+
+  if (DxLib_Init() == -1) {
+    return -1;
+  }
+
+  int gh;
+
+  char key[256];
+
+  int x, y;
+
+  x = 300;
+  y = 240;
+
+  gh = LoadGraph("image_player.png");
+
+  SetDrawScreen(DX_SCREEN_BACK);
+
+  while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0 && GetHitKeyStateAll(key) == 0) {
+
+    DrawGraph(x, y, gh, TRUE);
+
+    if (key[KEY_INPUT_LEFT]     == 1) {
+      x -= 6;
+    }
+    if (key[KEY_INPUT_RIGHT]    == 1) {
+      x += 6;
+    }
+    if (key[KEY_INPUT_UP]       == 1) {
+      y += 6;
+    }
+    if (key[KEY_INPUT_DOWN]     == 1) {
+      y -= 6;
+    }
+
+    if (key[KEY_INPUT_ESCAPE] == 1) {
+      break;
+    }
+  }
+
+  DxLib_End();
+
+  return 0;
+}
