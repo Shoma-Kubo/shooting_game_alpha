@@ -11,7 +11,7 @@ PLAYER::PLAYER() {
 
   move_left = move_right = move_up = move_down = 0;
 
-  //ˆÚ“®‹——£[px/F]
+  //ï¿½Ú“ï¿½ï¿½ï¿½ï¿½ï¿½[px/F]
   move_distance = 6;
   movie = 0;
 
@@ -20,7 +20,7 @@ PLAYER::PLAYER() {
 
   alive = true;
 
-  //’e‰Šú‰»
+  //ï¿½eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
   memset(shot, 0, sizeof(shot));
 
   int temp_img = LoadGraph("pictures/shot_player_01.png");
@@ -57,7 +57,7 @@ void PLAYER::Move() {
   x += move_right + move_left;
   y += move_up + move_down;
 
-  //•`‰æ”ÍˆÍŠO‚ÌˆÚ“®§ŒÀ
+  //ï¿½`ï¿½ï¿½ï¿½ÍˆÍŠOï¿½ÌˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½
   if (x < -16) {
     x = -16;
     move_left = 0;
@@ -75,7 +75,7 @@ void PLAYER::Move() {
     move_down = 0;
   }
 
-  //©‹@ƒAƒjƒ[ƒVƒ‡ƒ“ƒJƒEƒ“ƒg
+  //ï¿½ï¿½ï¿½@ï¿½Aï¿½jï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½g
   movie = movie >= 20 ? 0 : movie + 1;
 }
 
@@ -95,12 +95,13 @@ void PLAYER::Draw() {
 
 void PLAYER::Shot() {
 
-  //’e‚ğ”­Ë
+  //ï¿½eï¿½ğ”­ï¿½
   if (key[KEY_INPUT_Z] == 1 && count_shot % 4 == 0) {
     for (int i = 0; i < NUM_OF_SHOT; i++) {
       if (!shot[i].flag) {
         shot[i].flag = true;
         shot[i].x = x;
+        //hey
         shot[i].y = y;
         break;
       }
