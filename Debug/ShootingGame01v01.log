@@ -1,0 +1,13 @@
+﻿  background.cpp
+  boss.cpp
+  control.cpp
+  enemy.cpp
+C:\Programming\ShootingGame01\V01\ShootingGame01v01\enemy.cpp(66,20): warning C4101:  'player_y': ローカル変数は 1 度も使われていません。
+C:\Programming\ShootingGame01\V01\ShootingGame01v01\enemy.cpp(66,10): warning C4101:  'player_x': ローカル変数は 1 度も使われていません。
+  main.cpp
+  menu.cpp
+  pch.cpp
+  player.cpp
+  コードを生成中...
+C:\Programming\ShootingGame01\V01\ShootingGame01v01\enemy.cpp(67,10): warning C4101:  'temp_rad': ローカル変数は 1 度も使われていません。
+  ShootingGame01v01.vcxproj -> C:\Programming\ShootingGame01\V01\ShootingGame01v01\Debug\ShootingGame01v01.exe
